@@ -1,0 +1,86 @@
+<!DOCTYPE html><html lang="en" class="astro-F5HEQDRH">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <!-- <link rel="icon" type="image/x-icon" href="/favicon.ico" /> -->
+  <title>Black Friday</title>
+<link rel="stylesheet" href="/black-friday-countdown/assets/asset.3041da0f.css"></link>
+</head>
+
+<body>
+  <nav class="astro-WNS6IZ5M">
+    <p class="astro-WNS6IZ5M">NAVIGATION MENU</p>
+</nav>
+
+
+  <main class="astro-QMGCVML2">
+		<div class="img-container astro-QMGCVML2">
+			<picture class="main-image astro-QMGCVML2">
+				<source srcset="blackFriday.webp" type="image/webp" class="astro-QMGCVML2">
+				<source srcset="blackFriday.jpg" type="image/jpeg" class="astro-QMGCVML2">
+				<img src="blackFriday.jpg" alt="Black Friday" class="astro-QMGCVML2">
+			</picture>
+			<div id="counter" class="astro-DNGP7YCW">Loading...</div>
+
+<script>
+    const countDownDate = new Date("Nov 25, 2022 00:00:00").getTime();
+    const counter = document.querySelector('#counter');
+    function timerCalc() {
+        const now = Date.now();
+        const distance = countDownDate - now;
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        const text = document.createTextNode(days + "d " + hours + "h " + minutes + "m " + seconds + "s ");
+        counter.replaceChildren(text);
+        if (distance < 0) {
+            const friday = document.createTextNode("IT'S FRIDAY!");
+            counter.replaceChildren(friday);
+            clearInterval(timer);
+        }
+    };
+    const timer = setInterval(timerCalc, 1000);
+    timerCalc();
+</script>
+
+
+		</div>
+		<div class="container astro-3WFYP32D">
+    <p class="astro-3WFYP32D">GET NOTIFIED	&#10146;</p>
+    <form action="https://api.staticforms.xyz/submit" method="post" id="contact-form" onsubmit="showMessage()" class="astro-3WFYP32D">
+        <label class="standard-label astro-3WFYP32D" for="name">Name*:
+        </label>
+        <input type="text" id="name" name="name" required class="astro-3WFYP32D">
+        <label class="standard-label astro-3WFYP32D" for="contact-email">E-mail*:
+        </label>
+        <input type="email" id="contact-email" name="email" required class="astro-3WFYP32D">
+        <label class="standard-label astro-3WFYP32D" for="contact-telephone">Telephone:
+        </label>
+        <input type="tel" id="contact-telephone" name="phone" class="astro-3WFYP32D">
+
+        <input type="text" name="honeypot" style="display:none" class="astro-3WFYP32D">
+        <input type="hidden" name="accessKey" value="cfd00de7-234f-4452-b5d5-2223b00bd193" class="astro-3WFYP32D">
+        <input type="hidden" name="subject" value="Hello from Black Friday Form" class="astro-3WFYP32D">
+        <input type="hidden" name="redirectTo" value="javascript:window.location.href" class="astro-3WFYP32D">
+
+        <input type="submit" value="Submit" class="button astro-3WFYP32D">
+        <span class="submitted hidden astro-3WFYP32D">Thank you!</span>
+    </form>
+</div>
+<script>
+    function showMessage() {
+        document.querySelector('.submitted').classList.remove('hidden');
+    }
+</script>
+
+
+	</main>
+  <footer class="astro-AX335CVI">
+    <p class="astro-AX335CVI">FOOTER</p>
+</footer>
+
+
+</body></html>
+
