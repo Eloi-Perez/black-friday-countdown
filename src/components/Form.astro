@@ -1,0 +1,104 @@
+---
+---
+
+<div class="container">
+    <p>GET NOTIFIED	&#10146;</p>
+    <form action="https://api.staticforms.xyz/submit" method="post" id="contact-form" onsubmit="showMessage()">
+        <label class="standard-label" for="name">Name*:
+        </label>
+        <input type="text" id="name" name="name" required />
+        <label class="standard-label" for="contact-email">E-mail*:
+        </label>
+        <input type="email" id="contact-email" name="email" required />
+        <label class="standard-label" for="contact-telephone">Telephone:
+        </label>
+        <input type="tel" id="contact-telephone" name="phone" />
+
+        <input type="text" name="honeypot" style="display:none" />
+        <input type="hidden" name="accessKey" value="cfd00de7-234f-4452-b5d5-2223b00bd193" />
+        <input type="hidden" name="subject" value="Hello from Black Friday Form" />
+        <input type="hidden" name="redirectTo" value="javascript:window.location.href" />
+
+        <input type="submit" value="Submit" class="button">
+        <span class="submitted hidden">Thank you!</span>
+    </form>
+</div>
+<script is:inline>
+    function showMessage() {
+        document.querySelector('.submitted').classList.remove('hidden');
+    }
+</script>
+
+<style lang="scss">
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+
+        @media all and (max-width: 710px) {
+            flex-direction: column;
+        }
+    }
+
+    p {
+        font-size: var(--font-size-lg);
+        font-weight: 700;
+        margin: 6rem 6rem 0 0;
+        align-self: flex-start;
+        @media all and (max-width: 710px) {
+            align-self: center;
+            margin: 1rem 2rem 0 2rem;
+        }
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: clamp(1.2rem, 50vw, 12rem);
+        margin: 1rem 2rem;
+
+        @media all and (max-width: 710px) {
+            width: 85%;
+        }
+
+    }
+
+    input {
+        width: 100%;
+        padding: 0.8rem 1rem;
+        margin-bottom: 1rem;
+        background-color: var(--color-bg);
+        border-color: var(--color-border);
+        border-style: none none solid none;
+    }
+
+    .button {
+        border: outset var(--color-border);
+        font-size: var(--font-size-base);
+
+        &:hover {
+            cursor: pointer;
+            animation: drawH 0.5s forwards;
+            box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+        }
+    }
+
+    @keyframes drawH {
+        0% {
+            transform: translateY(0px);
+            filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0));
+        }
+
+        100% {
+            transform: translateY(-0.5px);
+            filter: drop-shadow(4px 4px 1px rgba(0, 0, 0, 0.32));
+        }
+    }
+
+    .hidden {
+        display: none;
+    }
+</style>

@@ -1,0 +1,41 @@
+---
+	import Layout from '../layouts/Layout.astro';
+	import Form from '../components/Form.astro';
+	import Counter from '../components/Counter.astro';
+---
+
+<Layout title="Black Friday">
+	<main>
+		<div class="img-container">
+			<picture class="main-image">
+				<source srcset="blackFriday.webp" type="image/webp">
+				<source srcset="blackFriday.jpg" type="image/jpeg">
+				<img src="blackFriday.jpg" alt="Black Friday">
+			</picture>
+			<Counter />
+		</div>
+		<Form />
+	</main>
+</Layout>
+
+<style lang="scss">
+	main {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.img-container {
+		position: relative;
+		height: 32vw;
+		// max-height: 50vh;
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+	}
+
+	.main-image img {
+		width: 100vw;
+	}
+</style>

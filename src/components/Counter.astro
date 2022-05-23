@@ -1,0 +1,45 @@
+---
+---
+
+<div id="counter">Loading...</div>
+
+<script is:inline>
+    const countDownDate = new Date("Nov 25, 2022 00:00:00").getTime();
+    const counter = document.querySelector('#counter');
+    function timerCalc() {
+        const now = Date.now();
+        const distance = countDownDate - now;
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        const text = document.createTextNode(days + "d " + hours + "h " + minutes + "m " + seconds + "s ");
+        counter.replaceChildren(text);
+        if (distance < 0) {
+            const friday = document.createTextNode("IT'S FRIDAY!");
+            counter.replaceChildren(friday);
+            clearInterval(timer);
+        }
+    };
+    const timer = setInterval(timerCalc, 1000);
+    timerCalc();
+</script>
+
+<style lang="scss">
+    #counter {
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        text-align: center;
+        mix-blend-mode: difference;
+        color: rgb(255, 248, 210);
+        font-size: var(--font-size-xl);
+        font-weight: 700;
+
+        @media all and (max-width: 710px) {
+            bottom: -0.5rem;
+        }
+    }
+</style>
