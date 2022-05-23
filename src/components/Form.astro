@@ -2,7 +2,8 @@
 ---
 
 <div class="container">
-    <p>GET NOTIFIED	&#10146;</p>
+    <p class="desktop">GET NOTIFIED &#10146;</p>
+    <p class="mobile">GET NOTIFIED &#11163;</p>
     <form action="https://api.staticforms.xyz/submit" method="post" id="contact-form" onsubmit="showMessage()">
         <label class="standard-label" for="name">Name*:
         </label>
@@ -46,10 +47,24 @@
         font-weight: 700;
         margin: 6rem 6rem 0 0;
         align-self: flex-start;
+
+        &.mobile {
+            display: none;
+        }
+
         @media all and (max-width: 710px) {
             align-self: center;
             margin: 1rem 2rem 0 2rem;
+
+            &.desktop {
+                display: none;
+            }
+
+            &.mobile {
+                display: block;
+            }
         }
+
     }
 
     form {
